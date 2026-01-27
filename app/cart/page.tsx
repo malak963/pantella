@@ -28,7 +28,7 @@ export default function CartPage() {
     if (!items.length) {
         return (
             <div className='flex items-center justify-center '>
-                <div className="w-200 mt-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-gray-100 text-center">
+                <div className="w-200 m-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-gray-100 text-center">
 
                     <h3 className="font-semibold text-3xl text-center m-5 italic text-amber-800">
                         Your cart is empty <span className="text-7xl">🛒</span>
