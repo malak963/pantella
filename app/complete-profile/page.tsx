@@ -43,7 +43,6 @@ export default function CompleteProfilePage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden font-sans">
-      {/* الخلفية المماثلة لصفحة تسجيل الدخول */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat scale-105 blur-[2px]"
         style={{ backgroundImage: "url('/images/background.png')" }}
