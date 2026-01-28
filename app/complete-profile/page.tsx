@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 export default function CompleteProfilePage() {
   const { user, isLoaded } = useUser();
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState(""); // أضفت الحقل الثاني كما طلبت
+  const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -29,9 +29,6 @@ export default function CompleteProfilePage() {
         lastName,
        
       });
-
-     
-
      
       router.replace("/");
       router.refresh(); 
@@ -52,10 +49,8 @@ export default function CompleteProfilePage() {
         style={{ backgroundImage: "url('/images/background.png')" }}
       ></div>
 
-      {/* الكارد الرئيسي بنفس أبعاد وتصميم الـ Sign-in */}
       <div className="relative z-10 w-full max-w-[420px] mx-4 rounded-[2.5rem] shadow-2xl overflow-hidden bg-white flex flex-col border border-white/90 ">
         
-        {/* الرأسية السوداء الفاخرة */}
         <div className="bg-[#1a1a1a] pt-12 pb-10 text-center w-full shadow-lg">
           <div className="flex justify-center items-center mb-4">
             <img
@@ -68,8 +63,6 @@ export default function CompleteProfilePage() {
             Complete Your Profile
           </p>
         </div>
-
-        {/* محتوى المدخلات */}
         <div className="px-8 pt-10 pb-12 w-full flex flex-col gap-6">
           <div className="text-center mb-2">
             <h2 className="text-xl font-bold text-[#1a1a1a]">Almost there!</h2>
@@ -77,7 +70,7 @@ export default function CompleteProfilePage() {
           </div>
 
           <div className="space-y-4">
-            {/* حقل الاسم الأول */}
+
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 ml-1">First Name</label>
               <input
@@ -89,7 +82,6 @@ export default function CompleteProfilePage() {
               />
             </div>
 
-            {/* حقل الكنية */}
             <div className="space-y-1">
               <label className="text-sm font-semibold text-gray-700 ml-1">Last Name</label>
               <input
@@ -102,14 +94,12 @@ export default function CompleteProfilePage() {
             </div>
           </div>
 
-          {/* رسالة الخطأ بتصميم متناسق */}
           {error && (
             <p className="text-red-500 text-xs font-medium text-center bg-red-50 py-2 rounded-lg border border-red-100">
               {error}
             </p>
           )}
 
-          {/* زر الحفظ (النحاسي) */}
           <button
             onClick={saveProfile}
             disabled={loading}
@@ -127,7 +117,6 @@ export default function CompleteProfilePage() {
           </button>
         </div>
 
-        {/* التذييل البسيط */}
         <div className="bg-gray-50/50 border-t border-gray-100 py-6 text-center">
           <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
             Secured by Pentella Cloud
