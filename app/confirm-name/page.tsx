@@ -1,32 +1,29 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-
-
-
-export default function AuthGuardPage() {
-  const { user} = useUser();
+export default function ConfirmNamePage() {
+  const { user, isLoaded, isSignedIn } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-  
+    if (!isLoaded) return;
 
-    // مسجل دخول لكن لم يكتب اسمه
-    if (!user.firstName || !user.lastName) {
+    if (!isSignedIn) {
+      router.replace("/sign-in");
+      return;
+    }
+
+    if (!user?.firstName || !user?.lastName) {
       router.replace("/complete-profile");
       return;
     }
 
-    // كل شيء مكتمل
+     
     router.replace("/");
-  }, []);
+  }, [isLoaded, isSignedIn, user, router]);
 
-  return (
-    <div className="min-h-screen flex items-center justify-center text-gray-500">
-      Checking your account...
-    </div>
-  );
+  return null;
 }
